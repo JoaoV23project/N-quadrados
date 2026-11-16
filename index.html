@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171916">
+    <title>♟️ Diferentes quadrados em um tabuleiro N por N</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="src/js/script.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#" aria-label="Página inicial">
+            <span class="brand-piece" aria-hidden="true">♟</span>
+            <span>Chess<span class="brand-accent">Math</span></span>
+        </a>
+        <button type="button" id="theme-toggle" class="theme-toggle"
+                aria-label="Ativar tema claro" aria-pressed="true">
+            <span class="theme-icon" aria-hidden="true">☼</span>
+            <span class="theme-label">Modo claro</span>
+        </button>
+    </header>
+
+    <main class="app-layout">
+        <!-- Painel principal -->
+        <section class="control-panel">
+            <div class="eyebrow"><span></span> MATEMÁTICA NO TABULEIRO</div>
+            <form id="calculator-form">
+                <h1>♟️ Casa dos quadrados</h1>
+                <p>Descubra quantos quadrados distintos podem ser formados em um tabuleiro N por N. Digite a quantidade de casas por lado e veja a representação ao lado.</p>
+
+                <label for="numero">Número de casas por lado</label>
+                <input type="number" name="numero" id="numero"
+                       placeholder="Ex.: 8" min="1" step="1"
+                       inputmode="numeric" autocomplete="off">
+                <button type="submit" class="calculate-button">
+                    Calcular quadrados <span aria-hidden="true">↗</span>
+                </button>
+            </form>
+            <div class="panel-note">
+                <span class="note-icon" aria-hidden="true">♜</span>
+                <span>O tabuleiro é atualizado automaticamente conforme você digita.</span>
+            </div>
+        </section>
+
+        <!-- Prévia do tabuleiro e resultado -->
+        <section class="preview-panel" aria-label="Visualização do tabuleiro">
+            <div class="preview-heading">
+                <div>
+                    <div class="eyebrow">VISUALIZAÇÃO</div>
+                    <h2>Seu tabuleiro</h2>
+                </div>
+                <span id="board-dimension" class="dimension-pill">— × —</span>
+            </div>
+
+            <div id="board-stage" class="board-stage">
+                <div id="board-placeholder" class="board-placeholder">
+                    <span aria-hidden="true">♞</span>
+                    <p>Digite um número para montar seu tabuleiro</p>
+                </div>
+                <div id="board" class="board" role="img" aria-label="Prévia do tabuleiro" hidden></div>
+                <div id="board-overlay" class="board-overlay" hidden>+8</div>
+            </div>
+            <p id="board-caption" class="board-caption">A prévia aparecerá aqui.</p>
+
+            <div id="corpo" aria-live="polite" aria-atomic="true"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>♟</span> Estratégia, lógica e matemática.
+    </footer>
+</body>
+</html>
